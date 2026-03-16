@@ -1,0 +1,220 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Playfair Display", serif;
+}
+.header{
+    /*background: radial-gradient(rgb(49, 42, 42), rgb(39, 26, 1));*/
+    /*background: linear-gradient(#111, #444, #222);*/
+    background: radial-gradient(rgb(49, 43, 42), rgb(31, 20, 0));
+    height: 90vh;
+    padding: 0 50px;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+}
+.brand{
+    display: flex;
+}
+.brand img{
+    margin-left: 10px;
+    cursor: pointer;
+}
+.brand h3{
+    margin-top: 30px;
+    color: wheat;
+    cursor: pointer;
+}
+.navbar nav{
+    margin-top: 30px;
+}
+.navbar nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+.navbar nav ul li a{
+    text-decoration: none;
+    /*color: black;*/
+    color: wheat;
+}
+.navbar .shop{
+    margin-top: 30px;
+    margin-right: 170px;
+}
+button{
+    border: none;
+    background-color: wheat;
+    border-radius: 15px;
+    padding: 7px 20px;
+    transition: transform 0.3s ease-in-out;
+    transition: box-shadow 0.3s ease;
+    cursor: pointer;
+}
+button:hover{
+    transform: scale(1.1);
+    box-shadow: 0 4px 8px  rgba(26, 17, 2, 0.7);
+}
+.hero{
+    display: flex;
+    padding-right: 30px;
+
+}
+.hero .col-1{
+    position: absolute;
+}
+.hero .col-2{
+    display: flex;
+    gap: 30px;
+    margin-top: 30px;
+    margin-left: 43%;
+}
+.hero .col-1{
+    margin-top: 250px;
+    margin-left: 30px;
+}
+.hero .col-1 p{
+    line-height: 1.5rem;
+    color: rgb(219, 194, 146);
+}
+.hero .col-2 img{
+    border-radius: 20px;
+}
+.hero .col-2 .pic2{
+    margin-top: 130px;
+}
+.hero .col-2 .pic2 img{
+    border-radius: 20%;
+}
+.hero h1{
+    position: absolute;
+   /* color: white;*/
+   color: wheat;
+    font-family: "Playfair Display", serif;
+    font-size: 100px;
+    margin-top: 10px;
+    margin-left: 323px;
+    font-weight: 300;
+}
+.hero h1 span{
+    color: transparent;
+    -webkit-text-stroke: 0.3px wheat;
+}
+.hero .col-1 button{
+    margin-top: 20px;
+}
+.category{
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    justify-content: center;
+    padding: 3rem;
+    margin-left: 140px;
+    font-family: "Playfair Display", serif;
+}
+.col{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 2rem;
+}
+.col img{
+    width: 220px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.center-col img{
+    width: 220px;
+    border-radius: 12px;
+    object-fit: cover;
+}
+.center-col{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 5rem;
+    margin-right: 130px;
+    gap: 1.5rem;
+}
+.textt{
+    color: black;
+    text-align: center;
+    max-width: 280px;
+}
+.textt h3{
+    font-size: 1.7rem;
+    margin-bottom: 0.5rem;
+}
+.textt p{
+    font-size: 0.9rem;
+    margin-bottom: 1.2rem;
+    line-height: 1.4;
+}
+.textt button{
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 7px 20px;
+    font-family: "Playfair Display", serif;
+}
+.sectionn{
+    display: flex;
+    flex: 1;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 2rem;
+    padding: 3rem 6rem;
+    background: radial-gradient(gray, rgb(39, 33, 0));
+}
+.write-up{
+    text-align: left;
+}
+.write-up h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+.write-up p{
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+.write-up ul{
+    margin-bottom: 7rem;
+}
+.write-up button{
+    border: none;
+    background-color: black;
+    color: white;
+    border-radius: 15px;
+    padding: 7px 20px;
+    font-family: "Playfair Display", serif;
+}
+.write-up-img{
+    margin-left: 2rem;
+}
+.write-up-img img{
+    border-radius: 12px;
+}
+.footer{
+    background-color: #080808;
+}
+.footer nav{
+    margin-top: 6rem;
+    margin-left: 70%;
+}
+.footer nav ul li{
+    list-style: none;
+    display: inline-block;
+    margin-right: 30px;
+}
+.footer nav ul li a{
+    text-decoration: none;
+    color: rgb(110, 110, 110);
+    font-size: 14px;
+    transform: back-ground 3s ease;
+}
+.footer nav ul li a:hover{
+    color: blue;
+}

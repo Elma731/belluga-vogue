@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — Belluga Vogue</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<header class="site-header solid" id="site-header">
+  <nav class="navbar">
+    <a href="index.html" class="nav-brand"><span class="brand-main">Belluga</span><span class="brand-sub">Vogue</span></a>
+    <ul class="nav-menu">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="cloths.html">Cloths</a></li>
+      <li><a href="shop.html">Shop</a></li>
+      <li><a href="lookbook.html">Lookbook</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-actions">
+      <button class="icon-btn" id="search-btn" aria-label="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+      </button>
+      <a href="wishlist.html" class="icon-btn" aria-label="Wishlist" style="position:relative">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+        <span class="nav-badge" id="wishlist-count" style="display:none">0</span>
+      </a>
+      <a href="cart.html" class="icon-btn" aria-label="Cart" style="position:relative">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="nav-badge" id="cart-count" style="display:none">0</span>
+      </a>
+      <a href="shop.html" class="btn-shop">SHOP</a>
+    </div>
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+  </nav>
+  <div class="search-overlay" id="search-overlay">
+    <div class="search-container">
+      <input type="text" placeholder="Search for pieces, collections..." id="search-input">
+      <button class="search-close" id="search-close">✕</button>
+    </div>
+  </div>
+</header>
+<div class="mobile-nav" id="mobile-nav">
+  <button class="mobile-nav-close" id="mobile-close">✕</button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="cloths.html">Cloths</a>
+  <a href="shop.html">Shop</a>
+  <a href="lookbook.html">Lookbook</a>
+  <a href="contact.html">Contact</a>
+</div>
+
+<!-- CART PAGE -->
+<main class="cart-page">
+  <div class="cart-heading reveal" style="margin-bottom:12px">
+    <h1>Your Cart</h1>
+    <p>Review your selection</p>
+  </div>
+
+  <!-- EMPTY STATE -->
+  <div id="cart-empty" class="empty-cart" style="display:none;flex-direction:column;align-items:center">
+    <div class="empty-cart-icon">
+      <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="#E8E0D4" stroke-width="1"><path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+    </div>
+    <h3>Your cart is empty</h3>
+    <p>Discover our latest collections and add your favourites.</p>
+    <a href="shop.html" class="btn btn-dark" style="margin-top:16px">Continue Shopping →</a>
+  </div>
+
+  <!-- CART WITH ITEMS -->
+  <div id="cart-full" style="display:none">
+    <div class="cart-layout">
+      <!-- LEFT: Items -->
+      <div>
+        <table class="cart-table">
+          <thead>
+            <tr>
+              <th>Product</th>
+              <th>Price</th>
+              <th>Quantity</th>
+              <th>Total</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="cart-items-wrap">
+            <!-- populated by JS -->
+          </tbody>
+        </table>
+        <a href="shop.html" class="cart-continue">← Continue Shopping</a>
+      </div>
+
+      <!-- RIGHT: Order Summary -->
+      <div class="order-summary">
+        <h3>Order Summary</h3>
+        <div class="summary-row">
+          <span>Subtotal</span>
+          <span id="cart-subtotal">$0</span>
+        </div>
+        <div class="summary-row">
+          <span>Shipping</span>
+          <span id="cart-shipping">Calculated at checkout</span>
+        </div>
+        <div class="promo-row">
+          <input class="promo-input" type="text" placeholder="Promo code">
+          <button class="promo-btn">Apply</button>
+        </div>
+        <div class="summary-total">
+          <span>Estimated Total</span>
+          <span id="cart-total">$0</span>
+        </div>
+        <a href="checkout.html" class="btn btn-gold" style="display:block;text-align:center;margin-top:24px;padding:15px">PROCEED TO CHECKOUT</a>
+        <div class="secure-note">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          Secure checkout &nbsp;·&nbsp; 30-day free returns
+        </div>
+      </div>
+    </div>
+  </div>
+</main>
+
+<!-- YOU MAY ALSO LIKE -->
+<section class="section section-beige">
+  <div class="container">
+    <div class="section-header reveal">
+      <span class="section-label">YOU MAY ALSO LIKE</span>
+      <h2>Complete Your Wardrobe</h2>
+    </div>
+    <div class="products-grid stagger-grid">
+      <div class="product-card reveal" onclick="window.location.href='product.html'">
+        <div class="product-card-img">
+          <img src="assets/filip-rankovic-grobgaard-Nn5tNjUVBJk-unsplash.jpg" alt="Velvet Evening Gown — Belluga Vogue" loading="lazy" decoding="async" width="600" height="750">
+          <span class="product-badge">NEW</span>
+          <button class="wishlist-btn" data-id="1" aria-label="Wishlist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-card-body">
+          <span class="section-label">EVENING WEAR</span>
+          <h3>Paisley Midi Sundress</h3>
+          <span class="price">$485</span>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="window.location.href='product.html'">
+        <div class="product-card-img">
+          <img src="assets/product-3.jpg" alt="Silk Wrap Dress — Belluga Vogue" loading="lazy" decoding="async" width="600" height="750">
+          <button class="wishlist-btn" data-id="3" aria-label="Wishlist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-card-body">
+          <span class="section-label">CASUAL LUXE</span>
+          <h3>Noir Classic</h3>
+          <span class="price">$275</span>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="window.location.href='product.html'">
+        <div class="product-card-img">
+          <img src="assets/product-6.jpg" alt="Linen Resort Co-ord Set — Belluga Vogue" loading="lazy" decoding="async" width="600" height="750">
+          <button class="wishlist-btn" data-id="6" aria-label="Wishlist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-card-body">
+          <span class="section-label">RESORT</span>
+          <h3>Linen Resort Co-ord Set</h3>
+          <span class="price">$245</span>
+        </div>
+      </div>
+      <div class="product-card reveal" onclick="window.location.href='product.html'">
+        <div class="product-card-img">
+          <img src="assets/product-10.jpg" alt="Sharp Shoulder Blazer Dress — Belluga Vogue" loading="lazy" decoding="async" width="600" height="750">
+          <button class="wishlist-btn" data-id="10" aria-label="Wishlist">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg>
+          </button>
+        </div>
+        <div class="product-card-body">
+          <span class="section-label">POWER DRESSING</span>
+          <h3>Sharp Shoulder Blazer Dress</h3>
+          <span class="price">$395</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="site-footer">
+  <div class="footer-quote">
+    <p>&quot;Fashion is the armor to survive the reality of everyday life.&quot;</p>
+    <cite>— Donna Karan</cite>
+  </div>
+  <div class="footer-main">
+    <div class="footer-col">
+      <div class="footer-logo">BELLUGA VOGUE</div>
+      <p class="footer-tagline">Own Your Bold</p>
+      <div class="social-icons">
+        <a href="#" class="social-icon" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a href="#" class="social-icon" aria-label="Pinterest"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8.5 12c0-2 1.5-3.5 3.5-3.5s3.5 1.5 3.5 3.5-1.5 3.5-3.5 3.5"/></svg></a>
+        <a href="#" class="social-icon" aria-label="TikTok"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M9 12a4 4 0 1 0 4 4V4a5 5 0 0 0 5 5"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Explore</h4>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="cloths.html">Cloths</a></li>
+        <li><a href="shop.html">Shop</a></li>
+        <li><a href="lookbook.html">Lookbook</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Customer Care</h4>
+      <ul>
+        <li><a href="#">Shipping &amp; Returns</a></li>
+        <li><a href="#">Size Guide</a></li>
+        <li><a href="#">FAQs</a></li>
+        <li><a href="#">Track Order</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <p>hello@bellugavogue.com</p>
+      <p>@bellugavogue</p>
+      <p>Response within 24hrs</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Belluga Vogue</p>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Service</a>
+    </div>
+  </div>
+</footer>
+
+<button class="scroll-top" id="scroll-top" aria-label="Scroll to top">↑</button>
+<script src="js/main.js"></script>
+</body>
+</html>
