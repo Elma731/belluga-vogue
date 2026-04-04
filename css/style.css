@@ -274,7 +274,7 @@ h3 { font-style: normal; }
   display: none;
   position: fixed;
   inset: 0;
-  background: var(--ivory);
+  background: var(--blush);
   z-index: 1001;
   flex-direction: column;
   justify-content: center;
