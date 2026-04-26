@@ -3,7 +3,7 @@
    Parisian Editorial Redesign
    ================================================ */
 
-@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,opsz,wght@0,6..96,400;0,6..96,500;0,6..96,600;1,6..96,400&family=Montserrat:wght@300;400;500;600&family=Dancing+Script:wght@600&display=swap');
 
 /* ---- CSS VARIABLES ---- */
 :root {
@@ -55,7 +55,7 @@ button { font-family: 'Montserrat', sans-serif; cursor: pointer; }
 
 /* ---- TYPOGRAPHY ---- */
 h1, h2, h3, h4, h5 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   letter-spacing: 0.02em;
   line-height: 1.15;
@@ -81,7 +81,7 @@ h3 { font-style: normal; }
   margin-bottom: 12px;
 }
 .price {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   font-weight: 400;
   color: var(--gold);
@@ -168,7 +168,7 @@ h3 { font-style: normal; }
   flex-shrink: 0;
 }
 .brand-main {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   font-size: 1.9rem;
   font-weight: 400;
@@ -283,7 +283,7 @@ h3 { font-style: normal; }
 }
 .mobile-nav.open { display: flex; }
 .mobile-nav a {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 2.6rem;
   font-weight: 300;
   font-style: italic;
@@ -389,7 +389,7 @@ h3 { font-style: normal; }
   margin-bottom: 14px;
 }
 .hero-split-text h1 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   font-weight: 300;
   font-size: clamp(3.6rem, 5vw, 5.4rem);
@@ -587,7 +587,7 @@ h3 { font-style: normal; }
 .product-card-body .section-label { margin-bottom: 3px; font-size: 0.6rem; }
 .product-card-body .section-label::before { display: none; }
 .product-card-body h3 {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   font-size: 1.2rem;
   font-weight: 400;
@@ -678,7 +678,7 @@ h3 { font-style: normal; }
   border-bottom: 1px solid var(--border-rose);
 }
 .collections-intro p {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   font-size: clamp(1.2rem, 2vw, 1.5rem);
   color: var(--plum);
@@ -917,7 +917,7 @@ h3 { font-style: normal; }
 .product-price {
   font-size: 1.6rem;
   color: var(--gold);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   margin-bottom: 14px;
 }
@@ -991,7 +991,7 @@ h3 { font-style: normal; }
   border: none;
   border-left: 1px solid var(--border-rose);
   border-right: 1px solid var(--border-rose);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 1.1rem;
   outline: none;
   background: transparent;
@@ -1158,7 +1158,7 @@ h3 { font-style: normal; }
 .cart-qty span {
   width: 36px;
   text-align: center;
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 1rem;
   border-left: 1px solid var(--border-rose);
   border-right: 1px solid var(--border-rose);
@@ -1213,7 +1213,7 @@ h3 { font-style: normal; }
   margin-top: 18px;
   padding-top: 18px;
   border-top: 1px solid var(--border-rose);
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-size: 1.3rem;
   color: var(--plum);
   font-style: italic;
@@ -1324,7 +1324,7 @@ h3 { font-style: normal; }
 .radio-option-info { flex: 1; }
 .radio-option-info strong { display: block; font-size: 0.87rem; font-weight: 500; margin-bottom: 3px; }
 .radio-option-info span { font-size: 0.8rem; color: var(--taupe); }
-.radio-option-price { font-family: 'Cormorant Garamond', serif; font-style: italic; font-size: 1.05rem; color: var(--gold); }
+.radio-option-price { font-family: 'Bodoni Moda', serif; font-style: italic; font-size: 1.05rem; color: var(--gold); }
 .card-icons { display: flex; gap: 8px; margin-top: 14px; }
 .card-icon {
   padding: 5px 12px;
@@ -1356,7 +1356,7 @@ h3 { font-style: normal; }
 .checkout-item-info { flex: 1; }
 .checkout-item-info h4 { font-size: 0.92rem; font-weight: 400; margin-bottom: 4px; font-style: italic; }
 .checkout-item-info span { font-size: 0.75rem; color: var(--taupe); font-family: 'Montserrat', sans-serif; }
-.checkout-item-price { font-family: 'Cormorant Garamond', serif; font-style: italic; color: var(--gold); font-size: 1rem; }
+.checkout-item-price { font-family: 'Bodoni Moda', serif; font-style: italic; color: var(--gold); font-size: 1rem; }
 .checkout-divider { height: 1px; background: var(--border-rose); margin: 18px 0; }
 
 /* ================================================
@@ -1468,7 +1468,7 @@ h3 { font-style: normal; }
   margin-bottom: 56px;
 }
 .footer-quote p {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   font-size: 1.12rem;
   color: var(--rose);
@@ -1493,7 +1493,7 @@ h3 { font-style: normal; }
   padding-bottom: 60px;
 }
 .footer-logo {
-  font-family: 'Cormorant Garamond', serif;
+  font-family: 'Bodoni Moda', serif;
   font-style: italic;
   font-size: 1.5rem;
   font-weight: 400;
