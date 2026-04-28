@@ -7,6 +7,87 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="icon" type="image/svg+xml" href="assets/favicon.svg">
   <meta name="theme-color" content="#2D1B2E">
+  <style>
+    @media (max-width: 640px) {
+      /* Break table into card layout */
+      .cart-table,
+      .cart-table tbody { display: block !important; width: 100% !important; }
+      .cart-table thead { display: none !important; }
+
+      /* Each row = flex card */
+      .cart-table tr {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        position: relative !important;
+        width: 100% !important;
+        padding: 14px 0 !important;
+        border-bottom: 1px solid rgba(196,132,122,0.2) !important;
+        gap: 0 8px !important;
+        align-items: center !important;
+        box-sizing: border-box !important;
+      }
+      .cart-table td {
+        display: block !important;
+        padding: 0 !important;
+        border: none !important;
+        box-sizing: border-box !important;
+      }
+
+      /* ── Row 1: product image + info, full width ── */
+      .cart-table td:nth-child(1) {
+        flex: 0 0 100% !important;
+        max-width: 100% !important;
+        padding-right: 32px !important;
+        margin-bottom: 10px !important;
+      }
+      /* The JS-injected inner div needs to be a proper flex row */
+      .cart-table td:nth-child(1) > div {
+        display: flex !important;
+        align-items: flex-start !important;
+        gap: 12px !important;
+        width: 100% !important;
+      }
+      .cart-item-img {
+        width: 68px !important;
+        height: 84px !important;
+        flex-shrink: 0 !important;
+        margin: 0 !important;
+      }
+      .cart-item-info { flex: 1 !important; min-width: 0 !important; }
+      .cart-item-info h4 { font-size: 0.88rem !important; word-break: break-word !important; }
+      .cart-item-info span { font-size: 0.72rem !important; }
+
+      /* ── Row 2: price | qty | total ── */
+      .cart-table td:nth-child(2) {
+        flex: 1 !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .cart-table td:nth-child(3) {
+        flex: 0 0 auto !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+      .cart-table td:nth-child(4) {
+        flex: 0 0 auto !important;
+        display: flex !important;
+        align-items: center !important;
+      }
+
+      /* ── Remove: absolute top-right corner ── */
+      .cart-table td:nth-child(5) {
+        position: absolute !important;
+        top: 14px !important;
+        right: 0 !important;
+        flex: 0 !important;
+      }
+
+      /* Compact qty controls */
+      .cart-qty { gap: 2px !important; }
+      .cart-qty button { width: 28px !important; height: 28px !important; }
+      .cart-qty span { width: 26px !important; font-size: 0.82rem !important; }
+    }
+  </style>
 </head>
 <body>
 
