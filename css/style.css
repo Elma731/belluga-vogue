@@ -1719,10 +1719,22 @@ h3 { font-style: normal; }
     margin: 0;
   }
 
-  /* Switch from fixed 380px height to auto aspect-ratio so 2 cards fit on screen */
+  /* Switch from fixed heights to auto aspect-ratio so 2 cards fit on screen */
   .product-card-img {
     height: auto;
     aspect-ratio: 3 / 4;
+  }
+
+  /* Category cards: was 440px fixed — now proportional */
+  .category-card {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  /* Season card images: was 200px fixed — now proportional */
+  .season-card img {
+    height: auto;
+    aspect-ratio: 4 / 3;
   }
 
   .product-card-body {
