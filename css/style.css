@@ -1719,6 +1719,12 @@ h3 { font-style: normal; }
     margin: 0;
   }
 
+  /* Switch from fixed 380px height to auto aspect-ratio so 2 cards fit on screen */
+  .product-card-img {
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
   .product-card-body {
     padding: 6px 6px 6px 8px;
     margin-top: 4px;
@@ -1779,8 +1785,13 @@ h3 { font-style: normal; }
 
 /* ---- 480px: very small phones ---- */
 @media (max-width: 480px) {
-  /* Single column product grid on tiny phones */
-  .products-grid { grid-template-columns: 1fr; gap: 12px; padding: 12px; }
+  /* Keep 2 columns — never drop to single on phones */
+  .products-grid { grid-template-columns: repeat(2, 1fr); gap: 6px; padding: 6px; }
+  /* Card body even more compact on tiny phones */
+  .product-card-body { padding: 5px 5px 5px 7px; }
+  .product-card-body h3 { font-size: 0.72rem; }
+  .product-card-body .price { font-size: 0.76rem; }
+  .wishlist-btn { width: 28px; height: 28px; }
   /* Tighten hero text */
   .hero-split-text { padding: 32px 16px 48px; }
   .hero-split-text h1 { font-size: 2.4rem; }
@@ -1792,12 +1803,12 @@ h3 { font-style: normal; }
   .checkout-page { padding: 80px 16px 48px; }
   /* Contact */
   .contact-layout { padding: 60px 16px; }
-  /* Lookbook single column */
-  .lookbook-grid { column-count: 1; padding: 0 16px 40px; }
-  /* Seasons single column */
-  .seasons-grid { grid-template-columns: 1fr; }
-  /* Category grid single column */
-  .category-grid { grid-template-columns: 1fr; gap: 10px; }
+  /* Lookbook 2 columns on small phones too */
+  .lookbook-grid { column-count: 2; column-gap: 5px; padding: 0 6px 40px; }
+  /* Seasons 2 columns */
+  .seasons-grid { grid-template-columns: repeat(2, 1fr); }
+  /* Category grid 2 columns */
+  .category-grid { grid-template-columns: repeat(2, 1fr); gap: 8px; }
   /* Footer tighter */
   .footer-main { gap: 24px; }
   /* Section label smaller */
