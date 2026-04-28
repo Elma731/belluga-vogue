@@ -1828,3 +1828,76 @@ h3 { font-style: normal; }
   /* Navbar */
   .navbar { padding: 10px 14px; }
 }
+
+/* ── CART TABLE → CARD LAYOUT on mobile ─────────────────────── */
+@media (max-width: 640px) {
+  /* Hide column headers */
+  .cart-table thead { display: none; }
+  /* Break table model so rows become block stacks */
+  .cart-table,
+  .cart-table tbody { display: block; width: 100%; }
+  /* Each row is a flex card */
+  .cart-table tr {
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    padding: 16px 0;
+    border-bottom: 1px solid rgba(196,132,122,0.18);
+    row-gap: 10px;
+  }
+  .cart-table td {
+    display: block;
+    padding: 0 !important;
+    border-bottom: none !important;
+    vertical-align: unset;
+  }
+  /* ── Row 1: product image + name (full width) ── */
+  .cart-table tr td:nth-child(1) {
+    flex: 0 0 100%;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding-right: 36px !important;
+  }
+  .cart-item-img {
+    width: 68px;
+    height: 84px;
+    margin-right: 0;
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+  .cart-item-info { flex: 1; min-width: 0; }
+  .cart-item-info h4 { font-size: 0.88rem; word-break: break-word; }
+  .cart-item-info span { font-size: 0.72rem; }
+  /* ── Row 2: price | qty | total in a flex row ── */
+  .cart-table tr td:nth-child(2) {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    font-size: 0.84rem;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .cart-table tr td:nth-child(3) {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+  }
+  .cart-table tr td:nth-child(4) {
+    flex: 0 0 auto;
+    display: flex;
+    align-items: center;
+    font-size: 0.84rem;
+    font-weight: 500;
+    font-family: 'Cormorant Garamond', serif;
+  }
+  /* ── Remove button: top-right corner ── */
+  .cart-table tr td:nth-child(5) {
+    position: absolute;
+    top: 16px;
+    right: 0;
+  }
+  /* Tighten qty controls */
+  .cart-qty { gap: 2px; }
+  .cart-qty button { width: 28px; height: 28px; font-size: 0.9rem; }
+  .cart-qty span { width: 28px; font-size: 0.82rem; }
+}
