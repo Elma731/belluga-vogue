@@ -742,7 +742,7 @@ h3 { font-style: normal; }
 }
 .two-col.reverse { direction: rtl; }
 .two-col.reverse > * { direction: ltr; }
-.about-img { overflow: hidden; }
+.about-img { }
 .about-img img { width: 100%; height: auto; display: block; }
 .about-text h2 { font-size: clamp(1.9rem, 3vw, 2.8rem); margin-bottom: 1.4rem; }
 .about-text p { color: var(--taupe); margin-bottom: 1.3rem; line-height: 1.9; font-size: 0.9rem; font-weight: 300; }
@@ -1299,7 +1299,7 @@ h3 { font-style: normal; }
   background: var(--ivory);
   padding: 12px 16px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.87rem;
+  font-size: 1rem;
   font-weight: 300;
   outline: none;
   transition: var(--transition);
@@ -1431,7 +1431,7 @@ h3 { font-style: normal; }
   color: var(--cream-white);
   padding: 14px 20px;
   font-family: 'Montserrat', sans-serif;
-  font-size: 0.87rem;
+  font-size: 1rem;
   outline: none;
   transition: var(--transition);
 }
@@ -1775,4 +1775,33 @@ h3 { font-style: normal; }
   /* Section/container tighter on mobile */
   .section { padding: 20px 0; }
   .container { padding: 0 8px; }
+}
+
+/* ---- 480px: very small phones ---- */
+@media (max-width: 480px) {
+  /* Single column product grid on tiny phones */
+  .products-grid { grid-template-columns: 1fr; gap: 12px; padding: 12px; }
+  /* Tighten hero text */
+  .hero-split-text { padding: 32px 16px 48px; }
+  .hero-split-text h1 { font-size: 2.4rem; }
+  /* Product detail */
+  .product-detail-wrap { padding: 24px 16px 48px; }
+  .breadcrumb { padding: 12px 16px; }
+  /* Cart & checkout */
+  .cart-page { padding: 80px 16px 48px; }
+  .checkout-page { padding: 80px 16px 48px; }
+  /* Contact */
+  .contact-layout { padding: 60px 16px; }
+  /* Lookbook single column */
+  .lookbook-grid { column-count: 1; padding: 0 16px 40px; }
+  /* Seasons single column */
+  .seasons-grid { grid-template-columns: 1fr; }
+  /* Category grid single column */
+  .category-grid { grid-template-columns: 1fr; gap: 10px; }
+  /* Footer tighter */
+  .footer-main { gap: 24px; }
+  /* Section label smaller */
+  .section-label { font-size: 0.65rem; }
+  /* Navbar */
+  .navbar { padding: 10px 14px; }
 }
